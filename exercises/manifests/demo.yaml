@@ -1,0 +1,27 @@
+# Declarative Kubernetes manifest
+## Created using
+### kubectl create deploy demo --image=nginx --dry-run=client -o yaml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+  name: demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: demo
+    spec:
+      containers:
+        - image: nginx
+          name: nginx
+          resources: {}
+status: {}
